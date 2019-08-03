@@ -22,9 +22,94 @@ esc :q			exist without save
 esc /stringtofind
 
 set command also
+--------------------------------------------------------------------------------------------------------
 
+/dev
 
----------------------------------------
+"Dev" is short for "devices." This directory contains mostly special files that represent the physical hardware on the system. When you see "dev" think "devices."
+
+/bin
+
+"Bin" is short for "binaries" which is just a fancy word for executable files. Files in here can be run from a shell. When you see "bin" think "binaries."
+
+/etc
+
+"Etc" is kind of a strange one. It used to literally mean "et cetera," and was where everything that didn't belong everywhere else went. Now it has a new meaning, and contains low-level system utilities and low-level configuration files. When you see "etc" remember that it's the weird one with low-level configurations.
+
+/boot
+
+"Boot" contains files used during boot. Yeah.
+
+/lib
+
+"Lib" contains shared libraries used by executable files. When you see "lib" just think "Libraries."
+
+/home
+
+"Home" is where a user's files are stored, be it documents, settings, desktop, downloads, etc. When you see "home" just remember that home is where the heart is, given that heart = documents, settings, and important things.
+
+/media
+
+"Media" is commonly used by the system as a place to mount attachable storage (Flash drives, CDs, DVDs, etc). When you see "media" think of attachable media.
+
+/mnt
+
+"Mnt" is a directory used for mounting file systems, especially block devices stored within a filesystem. When you see "mnt" think "Mount."
+
+/opt
+
+"Opt" is a special place for application-installers to install their software when they don't want to use other places. The purpose of this directory isn't quite clear to me. Although I've seen several applications use it, most just install in other directories. I'm not sure what "opt" stands for, but I always think "Optional Software."
+
+/proc
+
+"Proc" is a special directory not made for mere mortals to understand. It represents currently running processes in memory as files, and understanding what's actually contained in here is beyond what I know. When you see "proc" think "Processes."
+
+/root
+
+"Root" is a directory used to store the root user's home directory. Very mysterious. You will rarely need to interact with this directory. Just remember that "root" stores root's documents and settings.
+
+/sbin
+
+"SBin" is just like "bin" except used for special executables for the system. When you see "sbin" think of "System Binaries."
+
+/tmp
+
+"Tmp" is for temporary storage for applications such as web browsers. When you see "tmp" think or "Temporary."
+
+/usr
+
+"Usr" is a directory used for user-installed software. Instead of installing libraries to "/bin" and "/lib," package managers will usually install to "/usr/bin" and "/usr/lib" instead. When you see "usr" think "User installed software."
+
+Note that some distributions are now making "/usr/bin" and "/usr/lib" synonymous to the equivalent "/bin" and "/lib" directories to eliminate confusion and simplify the way software is installed on the system.
+
+/var
+
+"Var" is for "variable" files, or files which can rapidly change on the system while processes are running. When you see "var" think "Variable files."
+-----------------------------------------------------------------------------------------------------------
+
+Mounting is a process by which the operating system makes files and directories on a storage device (such as hard drive, CD-ROM, or network share) available for users to access via the computer's file system.[1]
+
+In general, the process of mounting comprises operating system acquiring access to the storage medium; recognizing, reading, processing file system structure and metadata on it; before registering them to the virtual file system (VFS) component.
+
+Good software design has high cohesion and low coupling.Cohesion refers to what the class (or module) can do.
+As for coupling, it refers to how related or dependent two classes/modules are toward each other. 
+Cohesion (Co-hesion) : Co which means together, hesion which means to stick. The System of sticking together of particles of different substances.Low coupling often correlates with high cohesion, and vice versa.
+What is the difference between replication, partitioning, clustering, and sharding?
+Replication: The strategy of duplicating data across more than one node. There are many varieties, simplest being Master-Slave(s) or Leader-Follower and can either be synchronous or asynchronous.
+From a database perspective, clustering is when you have a group of machines (nodes) hosting the same database schema on the same database software with some form of data exchange between these machines. From outside of the cluster, these machines are seen as a single unit containing a union of the data that is spread across the nodes in the cluster. When your application accesses a cluster, the request is ultimately routed to a single node in the cluster for read or write operation.Replication is a form of clustering where all nodes in the cluster have the same/identical schema and data. This is useful in the following scenarios:
+
+To have high availability of data. Even if a node goes down, the data is still available from other nodes in the cluster.
+Separate nodes for write and read. Data is replicated from the write cluster to all read clusters. This ensures that under high transaction volumes, the read operations are not getting delayed by write operations and vice-versa.
+Multiple nodes for read operations and for write operations. This ensures that the read and the write operations are load balanced across multiple nodes resulting in higher scalability and data throughput.
+Sharding and Partitioning are essentially the same cluster topology. All nodes in the cluster have identical schema, however the data is divided across nodes such that each node has only a subset of the data. No two nodes will have the same data. Sharding has its use in the following scenarios:
+
+Each database node has an upper limit to the amount of data it can store. This limited is usually due to hardware configuration. For example, a node that has a 4TB hard disk attached, can store up to a maximum of 4TB of data. If the total volume of data exceeds this limit, it has to be sharded.
+Suppose your dataset has 500 million records (rows) for a given table. In a replicated setup, when you fire a query against this table, it is executed in a single node for all 500 million records. In a sharded setup, the query would be split-up across shards and executed. This would be faster since a. the amount of records to query in each shard would be much lesser than 500 million and b. the queries across shards will be executed in parallel.
+Of course, sharding is a much more complex setup than clustering. Apart from database platform support it would also require effort in schema design for identifying/introducing a shard key that would be used to split/join data across the shards. The shard key must be chosen such that data is distributed equally across all shards, which may not be easy to determine under certain scenarios.
+
+Also note that in the interest of high availability, it is a common practice to have each shard replicated across more than one node, thereby adding another level of complexity to the cluster topology.
+
+----------------------------------------------------------------------------------------------
 
 rm file(s) or directory(s)     rm filename1 filename2 filename3
 
@@ -157,8 +242,7 @@ tail (see man tail for options, see the last 10 lines of a file by default), whi
 less <file> : Used to view the file on terminal (especially for big files)
 ( up/down arrow is used to go through the file line by line & tab is used to view The file page by page &
 “g” is used to go to the beginning of the file & “G” is Used to go to the end of the file & /<string> is
-
-used to search for the string in File from top to bottom & ?<string> is used to search from down to top)
+used to search for the string in File from top to bottom & ?<string> is used to search from down to top) q to return
 
 find (see man find, finds files and/or directories using a variety of methods, most commonly by name, e.g. find . -name "somepattern*.someext" -type f <-- finds files with that name pattern in the current directory and all accessible subdirectories)
 93. find <path> -name <file> : Used to find the location of the file in a particular path
@@ -358,6 +442,13 @@ x execute execute a file
 6.2. How to give File Read/Write Permissions in Unix
 chmod <Permission> <FileName>
 Example : chmod 777 abc.txt
+7. How to find list of all the links in a directory in Unix?
+ls -lrt | grep "^l"
+
+^  This signifies start of each line
+l  Each symbolic link has "1'' in the beginning of line like below :
+lrwxrwxrwx 1 gg99a weblog 3 Dec 9 22:20 latest -> 1.3
+So this command prints all lines from result of ls -lrt,which starts with "l" and all symolic link's lines start with "l",hence the result.
 
 ::::::::::::::::::::Hands on Example:::::::::::::::::::
 I’ll describe a common scenario of the following task - you are sitting at a Linux computer and you need to add a little RESTful service to a remote server. How do you do it?
