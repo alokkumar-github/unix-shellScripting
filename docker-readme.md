@@ -10,3 +10,5 @@ docker exec - Runs a command in a run-time container
 docker search - Searches the Ducker Hub for images
 docker attach - Attaches to a running container
 docker commit - Creates a new image from a containerâ€™s changes
+
+The first number is the port on your local machine : The second is the port inside the container.
