@@ -3,3 +3,4 @@ sudo fdisk -l
 
 mount flashdriver : https://ubuntuforums.org/showthread.php?t=1774562
 umount : https://help.ubuntu.com/community/Mount/USB
+https://askubuntu.com/questions/802672/how-to-properly-copy-files-from-hard-drive-to-usb-flash-drive-in-tty4-terminal
