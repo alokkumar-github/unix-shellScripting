@@ -1,2 +1,5 @@
+sudo fdisk -l
+1. List the Mount device: sudo lsblk
+
 mount flashdriver : https://ubuntuforums.org/showthread.php?t=1774562
 umount : https://help.ubuntu.com/community/Mount/USB
