@@ -618,7 +618,8 @@ rmdir ~/node-src
 Summary:
 
 So we have used: ssh, ls, cd, mkdir, rmdir, mv, rm, make, vi, grep, whoami and few other commands just in such a simple task. Other command that will be needed are cp for copying files, cut, sed, awk for manipulating text streams etc. but here I wanted not to post a random list of commands but to show a real life example. I hope it will be useful to demonstrate the feel of a typical flow of working in the Linux command line.
-
+iptables : 
+https://opensource.com/article/18/9/linux-iptables-firewalld
 
 
 
