@@ -1,3 +1,4 @@
+ Pressing Ctrl + R will open the reverse history search. Now start typing your command, this will give the first match. By pressing Ctrl + R again (and again) you can cycle through the history
 ------------------------------------
 VI command
 --------------------------
