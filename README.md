@@ -622,7 +622,7 @@ So we have used: ssh, ls, cd, mkdir, rmdir, mv, rm, make, vi, grep, whoami and f
 iptables : 
 https://opensource.com/article/18/9/linux-iptables-firewalld
 
-
+remote desktop ubuntu from window 10 : https://linuxconfig.org/ubuntu-20-04-remote-desktop-access-from-windows-10
 
 
 
