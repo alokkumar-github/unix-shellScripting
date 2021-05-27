@@ -626,6 +626,7 @@ remote desktop ubuntu from window 10 : https://linuxconfig.org/ubuntu-20-04-remo
 dual boot not coming grab window solution: 
 https://askubuntu.com/questions/1117391/live-usb-error-you-need-to-load-the-kernel-first
 https://askubuntu.com/questions/1249410/clean-ubuntu-20-04-installation-failure-executing-grub-install-dev-sda-failed
+ https://askubuntu.com/questions/88384/how-can-i-repair-grub-how-to-get-ubuntu-back-after-installing-windows
 
 
 
