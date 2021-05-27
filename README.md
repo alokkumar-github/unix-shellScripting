@@ -624,6 +624,7 @@ https://opensource.com/article/18/9/linux-iptables-firewalld
 
 remote desktop ubuntu from window 10 : https://linuxconfig.org/ubuntu-20-04-remote-desktop-access-from-windows-10
 dual boot not coming grab window solution: 
+https://askubuntu.com/questions/1117391/live-usb-error-you-need-to-load-the-kernel-first
 https://askubuntu.com/questions/1249410/clean-ubuntu-20-04-installation-failure-executing-grub-install-dev-sda-failed
 
 
